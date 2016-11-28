@@ -15,5 +15,29 @@ public class baby2 extends Actor
     public void act() 
     {
         // Add your action code here.
+         //set up for baby movement, sources: http://www.greenfoot.org/doc/tut-2 http://www.greenfoot.org/topics/310
+        if(Greenfoot.isKeyDown("a"))
+        {
+            move(-1);
+        }
+        if(Greenfoot.isKeyDown("d"))
+        {
+            move(1);
+        }
+        if(Greenfoot.isKeyDown("w"))
+        {
+            setLocation(getX(), getY()-1);
+        }
+        if(Greenfoot.isKeyDown("s"))
+        {
+            setLocation(getX(), getY()+1);
+        }
+        
+        //prevents baby from passing through the net
+        Actor net = getOneIntersectingObject(barrier.class);
+        if (net!=null)
+        {
+            move(1);
+        }
     }    
 }
