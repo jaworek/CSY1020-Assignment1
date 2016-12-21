@@ -6,8 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class MyWorld extends World
 {
+    private Counter1 theCounter1;
+    private Counter2 theCounter2;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -28,6 +31,19 @@ public class MyWorld extends World
         //End of code that must be included in your solution
         
         addObject(new ball1(), 200,200);
+        theCounter1 = new Counter1();
+        addObject(theCounter1, 50, 30);
+        theCounter2 = new Counter2();
+        addObject(theCounter2, 550, 30);
         
     }
+    public Counter1 getCounter1()
+    {
+        return theCounter1;
+    }
+    public Counter2 getCounter2()
+    {
+        return theCounter2;
+    }
+
 }

@@ -15,7 +15,7 @@ public class ball1 extends Actor
     public void act() 
     {
         //random number generator taken from Greenfoot API documentation: https://www.greenfoot.org/files/javadoc/greenfoot/Greenfoot.html
-        int degree = Greenfoot.getRandomNumber(180);
+        int degree = Greenfoot.getRandomNumber(91);
         move(1);
         Actor net = getOneIntersectingObject(barrier.class);
         if (net!=null)
@@ -39,10 +39,12 @@ public class ball1 extends Actor
         if(getX() == 0)
         {
             turn(degree);
+            hitWall2();
         }
         if(getX() == 599)
         {
             turn(degree);
+            hitWall1();
         }
         if(getY() == 0)
         {
@@ -53,5 +55,16 @@ public class ball1 extends Actor
             turn(degree);
         }
     } 
-    
+    private void hitWall1()
+    {
+        MyWorld spaceWorld = (MyWorld) getWorld();
+        Counter1 counter = spaceWorld.getCounter1();
+        counter.bumpCount(1);
+    }
+    private void hitWall2()
+    {
+        MyWorld spaceWorld = (MyWorld) getWorld();
+        Counter2 counter = spaceWorld.getCounter2();
+        counter.bumpCount(1);
+    }
 }

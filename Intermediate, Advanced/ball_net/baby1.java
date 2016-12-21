@@ -39,5 +39,13 @@ public class baby1 extends Actor
         {
             move(-1);
         }
-    }    
+        
+        //bounces off the baby from the ball
+        Actor ball1 = getOneIntersectingObject(ball1.class);
+        if (ball1!=null)
+        {
+            move(-20);
+        }
+    }
+    
 }
