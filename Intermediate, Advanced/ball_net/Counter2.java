@@ -14,7 +14,7 @@ public class Counter2 extends Actor
 
     public Counter2()
     {
-        setImage(new GreenfootImage("0", 20, Color.WHITE, Color.BLACK));
+        setImage(new GreenfootImage("Score: " + totalCount, 20, Color.BLACK, Color.WHITE));
     }
 
     /**
@@ -23,6 +23,6 @@ public class Counter2 extends Actor
     public void bumpCount(int amount)
     {
         totalCount += amount;
-        setImage(new GreenfootImage("" + totalCount, 20, Color.WHITE, Color.BLACK));
+        setImage(new GreenfootImage("Score: " + totalCount, 20, Color.BLACK, Color.WHITE));
     }
 }    

@@ -16,14 +16,6 @@ public class baby2 extends Actor
     public void act() 
     {
         // Add your action code here.
-        
-        //prevents baby from passing through the net
-        Actor net = getOneIntersectingObject(barrier.class);
-        if (net!=null)
-        {
-            move(1);
-        }
-        
         //automatic movement of a baby
         if(test == 0)
         {
@@ -40,6 +32,13 @@ public class baby2 extends Actor
         if(getY() == 399)
         {
             test = 0;
+        }
+        
+        //prevents baby from passing through the net
+        Actor net = getOneIntersectingObject(barrier.class);
+        if (net!=null)
+        {
+            move(1);
         }
     }    
 }

@@ -1,44 +1,46 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class baby1 here.
+ * Write a description of class baby4 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class baby1 extends Actor
+public class baby4 extends Actor
 {
     /**
-     * Act - do whatever the baby1 wants to do. This method is called whenever
+     * Act - do whatever the baby4 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-        //set up for baby movement, sources: http://www.greenfoot.org/doc/tut-2 http://www.greenfoot.org/topics/310
-        if(Greenfoot.isKeyDown("left"))
+        //Take location from one actor and apply it to the other one: http://www.greenfoot.org/topics/8561/0 date: 27.12.2016
+        Actor theBall = (Actor)getWorld().getObjects(ball1.class).get(0);
+        int ballX = theBall.getX();
+        int ballY = theBall.getY();
+        if(getX()>ballX)
         {
             move(-1);
         }
-        if(Greenfoot.isKeyDown("right"))
+        if(getX()<ballX)
         {
             move(1);
         }
-        if(Greenfoot.isKeyDown("up"))
+        if(getY()>ballY)
         {
             setLocation(getX(), getY()-1);
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(getY()<ballY)
         {
             setLocation(getX(), getY()+1);
         }
-        
-        //prevents baby from passing through the net
+         //prevents baby from passing through the net
         Actor net = getOneIntersectingObject(barrier.class);
         if (net!=null)
         {
-            move(-1);
+            move(1);
         }
-    }
+    }    
     
 }

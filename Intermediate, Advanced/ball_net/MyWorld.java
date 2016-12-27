@@ -11,6 +11,7 @@ public class MyWorld extends World
 {
     private Counter1 theCounter1;
     private Counter2 theCounter2;
+    private ball1 theBall;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -30,7 +31,17 @@ public class MyWorld extends World
         addObject(new baby2(), 450, 200);
         //End of code that must be included in your solution
         
-        addObject(new ball1(), 200,200);
+        addObject(new baby3(), 100, 300);
+        addObject(new baby4(), 500, 300);
+        addObject(new baby5(), 100, 100);
+        addObject(new baby6(), 500, 100);
+        
+        //addObject(new ball1(), 200,200);
+        theBall = new ball1();
+        addObject(theBall, 200, 200);
+        int ballX = theBall.getX();
+        int ballY = theBall.getY();
+        
         theCounter1 = new Counter1();
         addObject(theCounter1, 50, 30);
         theCounter2 = new Counter2();
@@ -45,5 +56,4 @@ public class MyWorld extends World
     {
         return theCounter2;
     }
-
 }
