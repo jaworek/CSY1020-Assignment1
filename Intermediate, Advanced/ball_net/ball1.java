@@ -14,8 +14,21 @@ public class ball1 extends Actor
      */
     public void act() 
     {
-        //random number generator taken from Greenfoot API documentation: https://www.greenfoot.org/files/javadoc/greenfoot/Greenfoot.html
-        int degree = Greenfoot.getRandomNumber(91);
+        //random number generator taken from Greenfoot API documentation: https://www.greenfoot.org/files/javadoc/greenfoot/Greenfoot.html access date: 18.11.2016
+        int test = Greenfoot.getRandomNumber(3);
+        int degree = 0;
+        if(test == 0)
+        {
+            degree = 180;
+        }
+        if(test == 1)
+        {
+            degree = 135;
+        }
+        if(test == 2)
+        {
+            degree = 225;
+        }
         move(2);
         Actor baby_1 = getOneIntersectingObject(baby1.class);
         Actor baby_2 = getOneIntersectingObject(baby2.class);
@@ -26,18 +39,21 @@ public class ball1 extends Actor
         if (baby_1!=null || baby_2!=null || baby_3!=null || baby_4!=null || baby_5!=null || baby_6!=null)
         {
             turn(degree);
+            move(5);
         }
         
-        //bouncing off the walls, source: http://www.greenfoot.org/topics/1481
+        //bouncing off the walls, source: http://www.greenfoot.org/topics/1481 access date: 18.11.2016
         if(getX() == 0)
         {
-            turn(degree);
             hitWall2();
+			setLocation(300, 200);
+			turnTowards(599, 200);
         }
         if(getX() == 599)
         {
-            turn(degree);
             hitWall1();
+			setLocation(300, 200);
+			turnTowards(0, 200);
         }
         if(getY() == 0 || getY() == 399)
         {

@@ -36,17 +36,13 @@ public class MyWorld extends World
         addObject(new baby5(), 100, 100);
         addObject(new baby6(), 500, 100);
         
-        //addObject(new ball1(), 200,200);
         theBall = new ball1();
         addObject(theBall, 200, 200);
-        int ballX = theBall.getX();
-        int ballY = theBall.getY();
         
         theCounter1 = new Counter1();
         addObject(theCounter1, 50, 30);
         theCounter2 = new Counter2();
         addObject(theCounter2, 550, 30);
-        
     }
     public Counter1 getCounter1()
     {

@@ -21,11 +21,11 @@ public class baby4 extends Actor
         int ballY = theBall.getY();
         if(getX()>ballX)
         {
-            move(-1);
+            //move(-1);
         }
         if(getX()<ballX)
         {
-            move(1);
+            //move(1);
         }
         if(getY()>ballY)
         {

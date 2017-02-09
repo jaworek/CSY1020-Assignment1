@@ -24,5 +24,10 @@ public class Counter2 extends Actor
     {
         totalCount += amount;
         setImage(new GreenfootImage("Score: " + totalCount, 20, Color.BLACK, Color.WHITE));
+         if(totalCount == 10)
+        {
+            Greenfoot.stop();
+            setImage(new GreenfootImage("Team 2 won!", 20, Color.BLACK, Color.WHITE));
+        }
     }
 }    

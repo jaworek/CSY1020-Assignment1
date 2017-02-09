@@ -9,7 +9,7 @@ import java.awt.Color;
  */
 public class Counter1 extends Actor
 {
-    //counter reference: http://www.greenfoot.org/doc/howto-1 date: 21.12.2016
+    //counter reference: http://www.greenfoot.org/doc/howto-1 access date: 21.12.2016
     private int totalCount = 0;
 
     public Counter1()
@@ -24,5 +24,10 @@ public class Counter1 extends Actor
     {
         totalCount += amount;
         setImage(new GreenfootImage("Score: " + totalCount, 20, Color.BLACK, Color.WHITE));
+        if(totalCount == 10)
+        {
+            Greenfoot.stop();
+            setImage(new GreenfootImage("Team 1 won!", 20, Color.BLACK, Color.WHITE));
+        }
     }
 }    

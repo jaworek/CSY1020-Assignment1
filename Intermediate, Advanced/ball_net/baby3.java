@@ -35,7 +35,6 @@ public class baby3 extends Actor
             {
                 setLocation(getX(), getY()+1);
             }
-        //setLocation(mouse.getX(), mouse.getY());
         }
         //prevents baby from passing through the net
         Actor net = getOneIntersectingObject(barrier.class);

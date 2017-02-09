@@ -15,7 +15,7 @@ public class baby1 extends Actor
     public void act() 
     {
         // Add your action code here.
-        //set up for baby movement, sources: http://www.greenfoot.org/doc/tut-2 http://www.greenfoot.org/topics/310
+        //set up for baby movement, sources: http://www.greenfoot.org/doc/tut-2 http://www.greenfoot.org/topics/310 date accessed: 10.11.2016
         if(Greenfoot.isKeyDown("left"))
         {
             move(-1);
